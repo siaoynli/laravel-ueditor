@@ -1,0 +1,20 @@
+{
+  "name": "siaoynli/laravel-ueditor",
+  "description": "Ueditor integration for Laravel.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "siaoynli",
+      "email": "siaoynli@126.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Siaoynli\\LaravelUEditor\\": "src/"
+    }
+  },
+  "require": {
+    "siaoynli/laravel-uploads": "^1.0",
+    "siaoynli/laravel-images": "^1.0"
+  }
+}
