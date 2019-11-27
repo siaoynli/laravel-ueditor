@@ -22,6 +22,9 @@ class  UEditorController extends Controller
 
 
     public  function  test(){
+        if(!env("APP_DEBUG",false)) {
+            abort(404);
+        }
         return  view("ueditor");
     }
 
