@@ -115,7 +115,8 @@ class  UEditorController extends Controller
         $info = Upload::type($type)->do('upfile');
         if ($type == "image") {
             if ($info["state"] == "SUCCESS") {
-                Image::file('.'.$info['url'])->resize()->save();
+                $width=config('ueditor.upload.imageCompressBorder', 800);
+                Image::file('.'.$info['url'])->resize($width)->save();
             }
             return $info;
         } else {
