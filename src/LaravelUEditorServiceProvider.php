@@ -49,7 +49,9 @@ class LaravelUEditorServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             $router->group(['namespace' => __NAMESPACE__, "middleware" => config('ueditor.route.middleware', [])], function ($router) {
                 $router->any(config('ueditor.route.uri', '/ueditor/server'), 'UEditorController@serve');
-                $router->get('/ueditor/test', 'UEditorController@test');
+                if(env("APP_DEBUG") == true) {
+                    $router->get('/ueditor/test', 'UEditorController@test');
+                }
             });
         }
     }
