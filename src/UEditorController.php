@@ -21,7 +21,7 @@ class  UEditorController extends Controller
     private $output;
 
 
-    public  function  test(){
+    public  function  demo(){
         return  view("ueditor");
     }
 
