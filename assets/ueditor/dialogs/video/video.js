@@ -269,16 +269,20 @@
         if ( !url )return;
 
         var conUrl = convert_url(url);
-
         conUrl = utils.unhtmlForUrl(conUrl);
 
-        $G("preview").innerHTML = '<div class="previewMsg"><span>'+lang.urlError+'</span></div>'+
-        '<embed class="previewVideo" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
-            ' src="' + conUrl + '"' +
-            ' width="' + 420  + '"' +
-            ' height="' + 280  + '"' +
-            ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" >' +
-        '</embed>';
+        if (conUrl.startsWith("http") && url.indexOf(".mp4") > 0) {
+            $G("preview").innerHTML = '<div class="previewMsg"><span>' + lang.urlError + '</span></div>' +
+                '<video class="previewVideo"' +
+                ' src="' + url + '"' +
+                ' width="' + 420 + '"' +
+                ' height="' + 280 + '"' +
+                ' play="true" loop="false" data-setup="{}" controls="controls" preload="auto">' +
+                '</video>';
+
+        }else{
+            $G("preview").innerHTML = '<div class="previewMsg"><span>' + lang.urlError + '</span></div>';
+        }
     }
 
 
