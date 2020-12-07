@@ -33,13 +33,13 @@ class  UEditorController extends Controller
                 $result = config('ueditor.upload');
                 break;
             case 'uploadimage':
-                $result = $this->upload('image');
+                $result = $this->upload('images');
                 break;
             case 'uploadfile':
-                $result = $this->upload('attach');
+                $result = $this->upload('attaches');
                 break;
             case 'uploadvideo':
-                $result = $this->upload('video');
+                $result = $this->upload('videos');
                 break;
             case 'uploadscrawl':
                 $config = array(
